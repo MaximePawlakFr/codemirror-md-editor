@@ -1,4 +1,16 @@
 body {
-  background-color: teal; }
+	background-color: teal; 
+}
+
+iframe{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#row{
+	margin: auto;
+	left: 6.28%;
+}
 
 /*# sourceMappingURL=style.css.map */

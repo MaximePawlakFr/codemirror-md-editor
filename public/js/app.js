@@ -1,14 +1,41 @@
-$(document).ready(function(){
-	var code = $(".codemirror-textarea")[0];
-	var editor = CodeMirror.fromTextArea(code, {
-		lineNumbers : true
+
+//index.html
+
+document.getElementById('result').innerHTML =
+marked(localStorage.getItem('text'));
+
+
+function saveEditor(){
+	var editorValue = document.getElementById("comment").value;
+	localStorage.setItem('text', editorValue);
+}
+
+var previewLoad = setInterval(function() { saveEditor() },1000);
+
+var editor;
+function load(){
+
+	editor = CodeMirror.fromTextArea(document.getElementById("comment"), {
+		mode:  "javascript",
+		theme: 'icecoder',
+		styleActiveLine: true,
+		lineNumbers: true,
 	});
 
-	$("#preview-form").submit(function(e){
-		var value = editor.getValue();
-		if(value.length == 0) {
-			alert("Missing comment!");
-		}
-	});
-	
-});
+	var storeValue = localStorage.getItem('text');
+	if (storeValue) {
+		document.getElementById('comment').value = storeValue;
+	};
+}
+
+load();
+
+function submit_html(){
+
+	editor.save();
+	var code = document.getElementById("comment").value;
+	document.getElementById('result').innerHTML =
+	marked(code);
+}
+
+var preview = setInterval(function() { submit_html() },1000);
