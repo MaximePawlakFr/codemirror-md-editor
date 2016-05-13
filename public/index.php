@@ -1,9 +1,11 @@
 <?php
 
+
 $comment = null;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['preview-form-comment'])) {
 	$comment = $_POST['preview-form-comment'];
+
 }
 
 ?>
@@ -18,15 +20,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['preview-form-comment'
 	<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
 </head>
 <body>
-	<h1>React</h1>
-	<div id="hello"></div>
+	<h1>Codemirror</h1>
 	<div class="ui grid">
 		<div class="two column row">
 			<div class="ui eight wide column segment">
 				<form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 					<textarea class="codemirror-textarea" name="preview-form-comment" id="preview-form-comment"><?php echo $comment; ?></textarea>
 					<br>
-					<input type="submit" name="preview-form-submit" id="preview-form-submit" value="Submit">
+					<input type="submit" name="preview-form-submit" id="preview-form-submit" value="View">
 				</form>
 			</div>
 			<div class="ui eight wide column segment">
@@ -41,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['preview-form-comment'
 	<script src="js/marked.js"></script>
 	<script src="js/app1.js"></script>
 	<script type="text/javascript">
-	
+
 	</script>
 </body>
 </html>

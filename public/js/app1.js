@@ -2,15 +2,19 @@
 
 $(document).ready(function(){
 
-	var editor = CodeMirror.fromTextArea(document.getElementById("preview-form-comment"), {
-		mode:  "javascript",
-		lineNumbers: true
+	var code = $(".codemirror-textarea")[0];
+	var editor = CodeMirror.fromTextArea(code, {
+		lineNumbers : true
 	});
 
+	$("#preview-form").submit(function(e){
+		var value = editor.getValue();
+		if(value.length == 0) {
+			alert("Missing comment!");
+		}
+	});
 	
-
 });
-
 	// $('#view').click(function(){
 	// 	var file = document.getElementById('comment').files[0];
 
