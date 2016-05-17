@@ -1,8 +1,10 @@
-
 //index.html
 
-document.getElementById('result').innerHTML =
-marked(localStorage.getItem('text'));
+var m = localStorage.getItem;
+if (typeof m === "string") {
+	document.getElementById('result').innerHTML =
+	marked(localStorage.getItem('text'));
+};
 
 
 function saveEditor(){
@@ -31,7 +33,6 @@ function load(){
 load();
 
 function submit_html(){
-
 	editor.save();
 	var code = document.getElementById("comment").value;
 	document.getElementById('result').innerHTML =
