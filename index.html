@@ -1,1 +1,63 @@
-My Page
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Codemirror</title>
+	<link rel="stylesheet" href="public/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="public/css/semantic.min.css">
+</head>
+<body onload="load()">
+
+	<div class="ui center aligned grid">
+		<h1 class="ui fourteen wide column segment">Codemirror</h1>
+	</div>
+
+	<div class="ui grid">
+		<div id="row" class="two column row">
+			<div class="ui seven wide column segment">
+				<textarea type="text" id="comment"></textarea>
+			</div>
+			<div class="ui seven wide column segment">
+				<div id="result"></div>
+			</div>
+		</div>
+	</div>
+
+			<!-- <div class="ui two wide column segment">
+				<button id="view" onclick="saveEditor()">View</button>
+			</div> -->
+
+	<!-- <textarea type="text" id="textfield"></textarea>
+	<input type="button" value="save" onclick="save()"> -->
+
+	
+	
+	
+
+
+</body>
+<script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/lib/codemirror.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/carlo/jquery-base64/master/jquery.base64.min.js"></script>
+<script src="public/js/semantic.min.js"></script>
+<script src="public/js/marked.js"></script>
+<script src="public/js/app.js"></script>
+<script>
+
+	// function save(){
+	// 	var fieldValue = document.getElementById('textfield').value;
+	// 	localStorage.setItem('text', fieldValue);
+	// }
+
+	// function load(){
+	// 	var storeValue = localStorage.getItem('text');
+	// 	if (storeValue) {
+	// 		document.getElementById('textfield').value = storeValue;
+	// 	};
+	// }
+
+
+
+</script>
+</html>
