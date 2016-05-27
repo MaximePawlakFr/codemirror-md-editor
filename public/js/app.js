@@ -1,21 +1,19 @@
 
 //index.html
 
-document.getElementById('result').innerHTML =
-marked(localStorage.getItem('text'));
+document.getElementById('result').innerHTML = marked(localStorage.getItem('text'));
 
+var editorNode = document.getElementById("comment");
 
 function saveEditor(){
-	var editorValue = document.getElementById("comment").value;
+	var editorValue = editorNode.value;
 	localStorage.setItem('text', editorValue);
 }
 
-var previewLoad = setInterval(function() { saveEditor() },1000);
-
 var editor;
-function load(){
-
-	editor = CodeMirror.fromTextArea(document.getElementById("comment"), {
+(function load(tartanpion){
+	
+	editor = tartanpion.fromTextArea(document.getElementById("comment"), {
 		mode:  "javascript",
 		theme: 'icecoder',
 		styleActiveLine: true,
@@ -26,9 +24,10 @@ function load(){
 	if (storeValue) {
 		document.getElementById('comment').value = storeValue;
 	};
-}
+})(CodeMirror);
 
-load();
+// Immediately Invoked Functions Expression IIFE
+// load();
 
 function submit_html(){
 
@@ -38,4 +37,7 @@ function submit_html(){
 	marked(code);
 }
 
-var preview = setInterval(function() { submit_html() },1000);
+setInterval(function() { 
+	saveEditor();
+	submit_html();
+},1000);
